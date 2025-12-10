@@ -27,3 +27,4 @@ La forma típica de una función en cálculo lambda es:
 ```text
 λx. M
 
+
