@@ -7,7 +7,7 @@ Uso de `lambda` junto con funciones de orden superior:
 - sorted
 - reduce
 
-También se incluyen ejemplos de funciones que reciben y devuelven funciones.
+También incluí ejemplos de funciones que reciben y devuelven funciones.
 """
 
 from functools import reduce
