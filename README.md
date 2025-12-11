@@ -68,7 +68,7 @@ Aquí explico cada archivo.
 
 ---
 
-### 🔹 4.1 `01_basicos_lambda.py` — Uso básico del operador lambda
+### 4.1 `01_basicos_lambda.py` — Uso básico del operador lambda
 
 Incluye ejemplos como:
 
