@@ -1,14 +1,13 @@
 """
 02_funciones_alto_orden.py
 
-Ejemplos del uso de `lambda` junto con funciones de orden superior en Python:
+Uso de `lambda` junto con funciones de orden superior:
 - map
 - filter
 - sorted
 - reduce
 
-Estos ejemplos conectan con la idea del cálculo lambda, donde todo se basa en
-funciones que reciben y devuelven funciones.
+También se incluyen ejemplos de funciones que reciben y devuelven funciones.
 """
 
 from functools import reduce
@@ -21,11 +20,22 @@ print()
 
 
 # 1. map + lambda: aplicar una función a cada elemento
-# En cálculo lambda sería algo como aplicar (λx. x * x) a cada número.
+# En cálculo lambda sería como aplicar (λx. x * x) a cada número.
 cuadrados = list(map(lambda x: x * x, numeros))
 
 print("=== map + lambda (cuadrados) ===")
 print(cuadrados)
+print()
+
+
+# 1.1 map + lambda sobre cadenas de texto
+nombres = ["ana", "carlos", "beatriz"]
+
+nombres_mayus = list(map(lambda s: s.upper(), nombres))
+
+print("=== map + lambda (mayúsculas) ===")
+print("original :", nombres)
+print("MAYÚSCULAS:", nombres_mayus)
 print()
 
 
@@ -35,6 +45,14 @@ pares = list(filter(lambda x: x % 2 == 0, numeros))
 
 print("=== filter + lambda (pares) ===")
 print(pares)
+print()
+
+
+# 2.1 filter + lambda con condición distinta (mayores a 5)
+mayores_que_5 = list(filter(lambda x: x > 5, numeros))
+
+print("=== filter + lambda (mayores que 5) ===")
+print(mayores_que_5)
 print()
 
 
@@ -54,13 +72,31 @@ print(personas_ordenadas)
 print()
 
 
-# 4. reduce + lambda: acumular un valor (como sumar todo)
+# 3.1 sorted + lambda: ordenar palabras por longitud
+palabras = ["lambda", "x", "cálculo", "python"]
+
+palabras_ordenadas = sorted(palabras, key=lambda p: len(p))
+
+print("=== sorted + lambda (por longitud) ===")
+print(palabras_ordenadas)
+print()
+
+
+# 4. reduce + lambda: sumar todos los elementos
 # reduce recibe una función acumuladora:
 #   λacc. λx. acc + x
 suma_total = reduce(lambda acc, x: acc + x, numeros, 0)
 
 print("=== reduce + lambda (suma total) ===")
 print("suma_total =", suma_total)
+print()
+
+
+# 4.1 reduce + lambda: producto de todos los elementos
+producto_total = reduce(lambda acc, x: acc * x, numeros, 1)
+
+print("=== reduce + lambda (producto total) ===")
+print("producto_total =", producto_total)
 print()
 
 
