@@ -52,3 +52,25 @@ print("=== Ejemplo 4: lambda en map ===")
 print("números       :", numeros)
 print("multiplicados :", multiplicados)
 print()
+
+
+# 5. Lambda con valor por defecto en un parámetro
+# Ejemplo: elevar un número a una potencia (por defecto al cuadrado)
+potencia = lambda base, exp=2: base ** exp
+
+print("=== Ejemplo 5: parámetros con valor por defecto ===")
+print("potencia(3)      =", potencia(3))      # 3^2
+print("potencia(2, 3)   =", potencia(2, 3))   # 2^3
+print()
+
+
+# 6. Lambda como clave de ordenamiento (sorted + length)
+palabras = ["lambda", "x", "programación", "py"]
+
+# Ordenar por la longitud de cada palabra
+ordenadas_por_longitud = sorted(palabras, key=lambda p: len(p))
+
+print("=== Ejemplo 6: lambda como key en sorted ===")
+print("original :", palabras)
+print("ordenadas:", ordenadas_por_longitud)
+print()
